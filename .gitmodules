@@ -1,0 +1,3 @@
+[submodule "action_model_constructor/pracmln"]
+	path = action_model_constructor/pracmln
+	url = git@github.com:Occy88/pracmln.git
