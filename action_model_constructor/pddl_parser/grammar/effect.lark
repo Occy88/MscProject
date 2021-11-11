@@ -1,0 +1,27 @@
+%import .effect.effect
+%import .variable.variable
+%import .GD.GD
+%import .term.term
+%import .expression.expression
+%import .atomic_formulas.atomic_formula_term
+
+<effect> ::= ()
+<effect> ::= (and <c-effect>∗)
+<effect> ::= <c-effect>
+<c-effect> ::=:conditional−effects (forall (<variable>∗) <effect>)
+<c-effect> ::=:conditional−effects (when <GD> <cond-effect>)
+<c-effect> ::= <p-effect>
+<p-effect> ::= (<assign-op> <f-head> <f-exp>)
+<p-effect> ::= (not <atomic formula(term)>)
+<p-effect> ::= <atomic formula(term)>
+<p-effect> ::=:fluents(<assign-op> <f-head> <f-exp>)
+<cond-effect> ::= (and <p-effect>∗)
+<cond-effect> ::= <p-effect>
+
+effect: effect_1 | effect_2 | effect_3 | effect_4 | effect_5 | effect_6
+effect_1: "(" "and" effect ")"
+effect_2: "(" "not" atomic_formula_term ")"
+effect_3: atomic_formula_term
+effect_4: "(" "forall" "(" variable ")" effect ")"
+effect_5: "(" "when" GD effect ")"
+effect_6: "(" "change" term expression ")"

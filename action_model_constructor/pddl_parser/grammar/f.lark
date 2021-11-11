@@ -1,0 +1,7 @@
+//  <f-comp> ::= (<binary-comp> <f-exp> <f-exp>)
+//  <f-exp> ::= <number>
+//  <f-exp> ::= (<binary-op> <f-exp> <f-exp>)
+//  <f-exp> ::= (- <f-exp>)
+//  <f-exp> ::= <f-head>
+//  <f-head> ::= (<function-symbol> <term>∗)
+//  <f-head> ::= <function-symbol>
