@@ -1,10 +1,13 @@
 %import .requirements.require_key
 %import .name.name
-%import typed_lists.typed_list_name
-%import typed_lists.typed_list_variable
+%import .number.number
+%import .typed_lists.typed_list_name
+%import .typed_lists.typed_list_variable
 %import .predicate.predicate
 %import .action.action_def
-%import .action.durative_action_def
+%import .durative_action.durative_action_def
+%import .f.function_symbol
+%import .f.function_type
 //  <domain>                    ::= (define (domain <name>)
                                     [<require-def>]
                                     [<types-def>]:typing
@@ -40,14 +43,12 @@ constants_def: "(" ":constants" typed_list_name ")"
 predicates_def: "(" ":predicates" atomic_formula_skeleton+ ")"
 atomic_formula_skeleton: "(" predicate typed_list_variable ")"
 atomic_function_skeleton: "(" function_symbol typed_list_variable ")"
-function_symbol: name
 functions_def: "(" ":functions" function_typed_list_atomic_formula_skeleton ")"
 function_typed_list_atomic_formula_skeleton: function_typed_list_atomic_formula_skeleton_1 |
                                            | function_typed_list_atomic_formula_skeleton_2
 function_typed_list_atomic_formula_skeleton_1: atomic_formula_skeleton*
 function_typed_list_atomic_formula_skeleton_2: atomic_formula_skeleton+
                                              | function_type function_typed_list_atomic_formula_skeleton
-function_type: number
 
 structure_def: structure_def_1 | structure_def_2
 structure_def_1: action_def

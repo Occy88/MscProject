@@ -7,6 +7,8 @@
 %import .number.integer
 %import .goal_descriptor.GD
 %import .binary.binary_op
+%import .Domain.require_def
+%import .f.function_symbol
 //<problem> ::= (define (problem <name>)
 //                (:domain <name>)
 //                [<require-def>]

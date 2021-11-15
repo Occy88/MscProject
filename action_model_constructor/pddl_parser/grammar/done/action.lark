@@ -16,5 +16,5 @@ action_def: "(" ":action" action_symbol
 
 action_symbol: name
 
-action_body: [":precondition" GD]
+action_def_body: [":precondition" GD]
            | [":effect" effect]

@@ -1,4 +1,0 @@
-%import .name.name
-%import .variable.variable
-
-variable: name | variable
